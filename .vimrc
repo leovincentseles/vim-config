@@ -49,10 +49,11 @@ if version >= 700
 	nnoremap <C-d> :bp\|bd #<CR>
 end
 
-nmap <F10> :set relativenumber<CR>
-nmap <F11> :set norelativenumber<CR>
+nmap <F8> :set relativenumber<CR>
+nmap <F9> :set norelativenumber<CR>
 nnoremap <F3> :noh<CR>
-
+nnoremap <F5> :set nonu<CR>
+nnoremap <F6> :set nu<CR>
 " *********** ctags setting **************
 set tags=tags;
 set autochdir
@@ -99,19 +100,41 @@ if !exists('g:airline_symbols')
 endif
 let g:airline_theme='light'
 set laststatus=2
-let g:airline_left_sep = ''
-let g:airline_right_sep = '|'
-let g:airline_symbols.linenr = ''
-let g:airline_symbols.branch = '*'
-let g:airline_skip_empty_sections=1
-let g:airline_detect_whitespace=0
-let g:airline#extensions#whitespace#enabled = 0
-let g:airline#extensions#branch#enabled=1
-let g:airline#extensions#branch#empty_message = ''
-let g:airline#extensions#branch#format = 0
-let g:airline#extensions#tabline#enabled=1
-let g:airline#extensions#tabline#fnamemod=':t'
-let g:airline_section_c='%t'
+
+if (!empty($SSH_CONNECTION) && empty($NERD_FONT))
+	let g:airline_left_sep = ''
+	let g:airline_right_sep = '|'
+	let g:airline_symbols.linenr = ''
+	let g:airline_symbols.branch = '*'
+	let g:airline_skip_empty_sections=1
+	let g:airline_detect_whitespace=0
+	let g:airline#extensions#whitespace#enabled = 0
+	let g:airline#extensions#branch#enabled=1
+	let g:airline#extensions#branch#empty_message = ''
+	let g:airline#extensions#branch#format = 0
+	let g:airline#extensions#tabline#enabled=1
+	let g:airline#extensions#tabline#fnamemod=':t'
+	let g:airline_section_c='%t'
+else
+	let g:airline_left_sep = ''
+	let g:airline_right_sep = ''
+	let g:airline_symbols.linenr = ''
+	let g:airline_symbols.maxlinenr = ''
+	let g:airline_symbols.branch = ''
+	let g:airline_symbols.readonly = ' '
+	let g:airline_skip_empty_sections=1
+	let g:airline_detect_whitespace=0
+	let g:airline#extensions#whitespace#enabled = 0
+	let g:airline#extensions#branch#enabled=1
+	let g:airline#extensions#branch#empty_message = ''
+	let g:airline#extensions#branch#format = 0
+	let g:airline#extensions#tabline#enabled=1
+	let g:airline#extensions#tabline#fnamemod=':t'
+	let g:airline#extensions#tabline#left_sep = ''
+	" let g:airline_section_c='%t'
+	let g:airline_section_c = airline#section#create(['file', 'readonly'])
+endif
+
 
 " ************ YouCompleteMe **************
 let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/third_party/ycmd/.ycm_extra_conf.py'
