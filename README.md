@@ -1,4 +1,5 @@
 <h4 align="center">A vim configuration file.</h4>
+<p align="center"><img src="https://github.com/leovincentseles/vim-config/blob/master/images/style.jpg" alt="VIM"></p>
 
 ## Installation
 - Install the vim plugin manager [Vundle](https://github.com/VundleVim/Vundle.vim)
