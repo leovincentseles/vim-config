@@ -89,6 +89,7 @@ Plugin 'Valloric/YouCompleteMe'			" autocomplete
 Plugin 'scrooloose/nerdtree'			" Nerd Tree
 Plugin 'ludovicchabant/vim-gutentags'	" ctags gtags manager
 Plugin 'skywind3000/gutentags_plus'		" handle switch between cscope databases
+Plugin 'majutsushi/tagbar'				" Tag Bar
 " Plugin 'wesleyche/SrcExpl'				" Source Preview
  
 call vundle#end()
@@ -100,6 +101,9 @@ if !exists('g:airline_symbols')
 endif
 let g:airline_theme='light'
 set laststatus=2
+
+" enable the tagbar on vim-airline
+let g:airline#extensions#tagbar#enabled = 1
 
 if (!empty($SSH_CONNECTION) && empty($NERD_FONT))
 	let g:airline_left_sep = ''
