@@ -90,8 +90,9 @@ Plugin 'scrooloose/nerdtree'			" Nerd Tree
 Plugin 'ludovicchabant/vim-gutentags'	" ctags gtags manager
 Plugin 'skywind3000/gutentags_plus'		" handle switch between cscope databases
 Plugin 'majutsushi/tagbar'				" Tag Bar
+Plugin 'Raimondi/delimitMate'			" delimitMate can automatic complete the brackets
 " Plugin 'wesleyche/SrcExpl'				" Source Preview
- 
+
 call vundle#end()
 filetype plugin indent on
 
@@ -152,6 +153,7 @@ let g:syntastic_always_populate_loc_list = 0
 let g:ycm_show_diagnostics_ui = 0
 let g:ycm_enable_diagnostic_signs = 0
 let g:ycm_enable_diagnostic_highlighting = 0
+let g:ycm_key_list_stop_completion = ['<RIGHT>', '<LEFT>']
 set completeopt-=preview
 
 " ************ gutentags ************ 
