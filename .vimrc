@@ -186,4 +186,5 @@ let g:gutentags_ctags_extra_args += ['--c-kinds=+px']
 let g:gutentags_plus_switch = 1
 
 " ************ memo **********************
-" <leader> is mapped to '/'
+" <leader> is mapped to '\'
+
